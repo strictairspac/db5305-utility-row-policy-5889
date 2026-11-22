@@ -20,6 +20,7 @@ docker compose up -d --build --wait
 - FastAPI 文档 `http://127.0.0.1:19294/docs`
 - PostgreSQL 16 端口 `127.0.0.1:17794`，账号 `app`，演示库 `workflow`
 - `docker compose exec -T backend python -m scripts.seed_demo` 手动重跑演示数据
+- `GET /storage`、`POST /storage/migrate`、`POST /storage/switch` 查看存储模式、执行逐单迁移、切换接单端；`POST /intake` 带 `Idempotency-Key` 头受理新旧两端的档案
 - `docker compose logs -f backend worker` 查看运行情况
 - `docker compose down` 停容器并保留演示卷
 
